@@ -6,7 +6,7 @@ from .models import User, Team, Activity, Leaderboard, Workout
 
 @api_view(['GET'])
 def api_root(request, format=None):
-    base_url = request.build_absolute_uri('/')
+    base_url = "https://improved-invention-q7g4r6p5xqh6wwr-8000.app.github.dev/" if request.get_host().startswith("improved-invention") else request.build_absolute_uri('/')
     return Response({
         'users': base_url + 'api/users/',
         'teams': base_url + 'api/teams/',
